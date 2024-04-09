@@ -14,16 +14,15 @@ public class CPFValidador {
         cpfsvalidos = new ArrayList<>();
         cpfsinvalidos = new ArrayList<>();
         for(String cpf: cpfs.getCpfs()){
-            String cpfNumeros = cpf.replaceAll("[^0-9]", "");
-            if (cpfNumeros.length() == 11) {
+            cpf = cpf.trim();
+            String cpfNumero = cpf.replaceAll("[^a-zA-Z0-9]", "");
+            if (cpfNumero.length() == 11) {
                 cpfsvalidos.add(cpf);
             } else {
                 cpfsinvalidos.add(cpf);
             }
         }
     }
-
-
 
     public void imprimir(){
         System.out.println("VÁLIDOS:");
