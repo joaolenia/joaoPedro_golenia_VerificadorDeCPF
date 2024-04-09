@@ -19,6 +19,7 @@ public class Main {
         CPF ListaOriginal = new CPF(cpfs);
         CPFValidador validador = new CPFValidador();
         validador.tamanhoCPF(ListaOriginal);
+        validador.filtrarNumero();
         validador.imprimir();
 
     }

@@ -24,6 +24,21 @@ public class CPFValidador {
         }
     }
 
+    public void filtrarNumero() {
+        List<String> cpfsNumericos = new ArrayList<>();
+        for (String cpf : cpfsvalidos) {
+            cpf = cpf.trim();
+            if (cpf.matches("[\\d.-]+")) {
+                cpfsNumericos.add(cpf);
+            }
+            else{
+                cpfsinvalidos.add(cpf);
+            }
+        }
+        cpfsvalidos = cpfsNumericos;
+        cpfsNumericos = null;
+    }
+
     public void imprimir(){
         System.out.println("VÁLIDOS:");
         for (String valido:cpfsvalidos){
