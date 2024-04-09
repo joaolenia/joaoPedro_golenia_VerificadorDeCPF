@@ -3,6 +3,7 @@ package funcionalidades;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class CPFValidador {
 
     private List<String> cpfsvalidos;
