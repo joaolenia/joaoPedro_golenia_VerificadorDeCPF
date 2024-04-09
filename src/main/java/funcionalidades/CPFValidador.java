@@ -10,7 +10,7 @@ public class CPFValidador {
 
     public CPFValidador(){}
 
-    public void TamanhoCPF(CPF cpfs){
+    public void tamanhoCPF(CPF cpfs){
         cpfsvalidos = new ArrayList<>();
         cpfsinvalidos = new ArrayList<>();
         for(String cpf: cpfs.getCpfs()){
@@ -24,8 +24,19 @@ public class CPFValidador {
     }
 
 
-    public void Imprimir(){
 
+    public void imprimir(){
+        System.out.println("VÁLIDOS:");
+        for (String valido:cpfsvalidos){
+            System.out.println(valido);
+        }
+
+        System.out.println("-----------------------");
+
+        System.out.println("INVÁLIDOS:");
+        for (String invaliodo : cpfsinvalidos){
+            System.out.println(invaliodo);
+        }
 
     }
 
