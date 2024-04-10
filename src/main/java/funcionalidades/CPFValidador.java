@@ -11,10 +11,6 @@ public class CPFValidador {
     private List<String> cpfsvalidos;
     private List<String> cpfsinvalidos;
 
-    public CPFValidador() {
-    }
-
-
     public void tamanhoCPF(CPF cpfs) {
         cpfsvalidos = new ArrayList<>();
         cpfsinvalidos = new ArrayList<>();
