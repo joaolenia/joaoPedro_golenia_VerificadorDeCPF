@@ -1,9 +1,6 @@
 package funcionalidades;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CPF {
     private List<String> cpfs;
@@ -17,13 +14,24 @@ public class CPF {
         return cpfs;
     }
 
-    public void removerDuplicatas(){
-        Set<String> cpfSet = new LinkedHashSet<>(cpfs);
+    public void removerDuplicatas() {
+
+        Map<String, String> cpfMap = new HashMap<>();
+        List<String> cpfOrder = new ArrayList<>();
+        for (String cpf : cpfs) {
+            String cpfNumerico = cpf.replaceAll("[^0-9]", "");
+            if (!cpfMap.containsKey(cpfNumerico)) {
+                cpfMap.put(cpfNumerico, cpf);
+                cpfOrder.add(cpf);
+            }
+        }
         cpfs.clear();
-        cpfs.addAll(cpfSet);
+        cpfs.addAll(cpfOrder);
     }
-
-
 }
+
+
+
+
 
 
