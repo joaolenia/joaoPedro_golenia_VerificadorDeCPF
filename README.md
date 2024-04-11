@@ -54,6 +54,11 @@ Commit fix: Corrigindo filtragem de caracteres
 Aqui fiz uma pequena alteração onde o metodo de filtragem de caracteres salava os cpfs sem os caractares em uma lista chamada cpfNumerico, mantendo a integridade dos dados originais que não são modificados, e posteriormente serão imprimidos no console.
 A lista cpfNumerico vai ser utiliuzada para realizar os calculos de validação, vale lembrar que ela é um espelho da lista original, que contem os dados a serm impressos.
 
+Commit fix: Corrigindo remoção de duplicatas
+Percebi um problema na remoção de duplicatas da classe CPF então utilizei a estrutura de dados 'map' ao envés de 'set' para sanar a o problema, criei uma lista de string para garantir a mesma ordem dos elemetos dentro da lista
+
+
+
 
 
 
