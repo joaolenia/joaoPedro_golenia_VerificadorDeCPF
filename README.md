@@ -50,6 +50,11 @@ Aqui adicionei um método que remove os caracteres da lista de validos, deixando
 deixei pronto no metodo imprimir 2 linhas de codigo que imprimem o cpf formatado, exemplo ao envés de imprimir '12345678900' imprime 123.456.789-00
 porém não estou utilizando elas ainda, a fim de mostrar que meu programa está funcionando e removendo corretamente os caracteres.
 
+Commit fix: Corrigindo filtragem de caracteres
+Aqui fiz uma pequena alteração onde o metodo de filtragem de caracteres salava os cpfs sem os caractares em uma lista chamada cpfNumerico, mantendo a integridade dos dados originais que não são modificados, e posteriormente serão imprimidos no console.
+A lista cpfNumerico vai ser utiliuzada para realizar os calculos de validação, vale lembrar que ela é um espelho da lista original, que contem os dados a serm impressos.
+
+
 
 
 
