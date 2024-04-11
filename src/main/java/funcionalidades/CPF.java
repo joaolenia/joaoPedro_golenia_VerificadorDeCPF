@@ -7,7 +7,7 @@ public class CPF {
 
     public CPF(List<String> cpfs) {
         this.cpfs = cpfs;
-        removerDuplicatas();
+        rmoverDuplicatas();
     }
 
     public List<String> getCpfs() {
@@ -28,6 +28,23 @@ public class CPF {
         cpfs.clear();
         cpfs.addAll(cpfOrder);
     }
+
+    public void rmoverDuplicatas() {
+
+        Set<String> conjunto = new HashSet<>();
+        List<String> cpfOrder = new ArrayList<>();
+        for (String cpf : cpfs) {
+            String cpfNumerico = cpf.replaceAll("[^0-9]", "");
+            if (!conjunto.contains(cpfNumerico)) {
+                conjunto.add(cpfNumerico);
+                cpfOrder.add(cpf);
+            }
+        }
+        cpfs.clear();
+        cpfs.addAll(cpfOrder);
+        cpfOrder.clear();
+    }
+
 }
 
 

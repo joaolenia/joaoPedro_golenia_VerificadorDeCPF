@@ -15,11 +15,12 @@ public class CPFValidador {
     List<String> cpfNumerico = new ArrayList<>();
 
 
-    public void filtragemCompleta(CPF cpf) {
-        filtrarTamanho(cpf);
-         filtrarNumero();
-         filtrarCaracteres();
-        imprimir();
+    public void filtragemCompleta(CPF cpf){
+      filtrarTamanho(cpf);
+      filtrarNumero();
+      filtrarCaracteres();
+
+      imprimir();
     }
 
     public void filtrarTamanho(CPF cpfs) {
@@ -41,7 +42,8 @@ public class CPFValidador {
         for (String cpf : cpfsvalidos) {
             if (cpf.matches("[\\d.-]+")) {
                 aux.add(cpf);
-            } else {
+            }
+            else {
                 cpfsinvalidos.add(cpf);
             }
         }
@@ -66,10 +68,10 @@ public class CPFValidador {
     public void imprimir() {
         System.out.println("VÁLIDOS:");
         for (String valido : cpfsvalidos) {
-            //  String cpfFormatado = String.format("%s.%s.%s-%s", valido.substring(0, 3), valido.substring(3, 6), valido.substring(6, 9), valido.substring(9));
-            //System.out.println(cpfFormatado);
-            System.out.println(valido);
-        }
+              //  String cpfFormatado = String.format("%s.%s.%s-%s", valido.substring(0, 3), valido.substring(3, 6), valido.substring(6, 9), valido.substring(9));
+                //System.out.println(cpfFormatado);
+               System.out.println(valido);
+            }
 
         System.out.println("-----------------------");
 
@@ -78,8 +80,6 @@ public class CPFValidador {
             System.out.println(invaliodo);
         }
 
-
     }
-
-
 }
+
