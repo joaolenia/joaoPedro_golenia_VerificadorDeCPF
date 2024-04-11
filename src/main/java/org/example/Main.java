@@ -18,12 +18,7 @@ public class Main {
 
         CPF ListaOriginal = new CPF(cpfs);
         CPFValidador validador = new CPFValidador();
-        ListaOriginal.removerDuplicatas();
-       validador.tamanhoCPF(ListaOriginal);
-       validador.filtrarNumero();
-       validador.filtrarCaracteres();
-
-        validador.imprimir();
+        validador.filtragemCompleta(ListaOriginal);
 
     }
     public static void ler(String caminho, List<String> cpfs){
@@ -39,6 +34,7 @@ public class Main {
             br.close();
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+
         }
     }
 }
