@@ -1,102 +1,61 @@
-﻿# joaoPedro_golenia_VerificadorDeCPF
-Autor:João Pedro Golenia
-Contato:joao.golenia.pb@compasso.com.br
+# joaoPedro_golenia_VerificadorDeCPF
 
-Este documento refere-se a uma pequena documentação do desafio de verificação de CPF
+**Autor:** João Pedro Golenia  
+**Contato:** joaopedrogolenia@Gmail.com
 
-Task01: Criei uma branch main, uma branch 'dev' que deriva da 'main e uma branch'task01',
-nela que foram salvas as seguintes alterações:
+Este documento descreve o desenvolvimento do projeto de verificação de CPF.
 
+## Descrição do Projeto
 
-Commit feat: Adicionando a estrutura das clases CPF e CPFValidador
-Aqui criei o esqueleto do programa, basicamente duas classes a 'CPF' e 'CPFValidador'
-A classe 'CPF' será reponsável por armazenar a lista original de CPFs e remover as duplicatas, 
-a classe tem uma lista de String chamada de cpf, um construtor, e um método acessor GetCpfs, 
-já a classe 'CPFValidador' será reponsável por realizar todas as operações de verificação e filtragem, 
-trabalhando com duas listas de String 'cpfsvalidos' , 'cpfsinvalidos':
+O objetivo deste projeto é criar um sistema de verificação de CPF utilizando a linguagem C#. O sistema foi desenvolvido em várias etapas, cada uma registrada com commits específicos em uma branch de desenvolvimento.
 
-Commit feat: Adicionando o método tamanhoCPF
-Aqui adicionei na classe 'CPFValidador' um método que faz uma filtragem de CPFs com base em seu tamanho, 
-ele recebe como parametro um objeto do tipo 'CPF' e acessa a lista original de cpfs fornecida pelo usuário,
-dentro do metodo é feita uma pré filtragem, que retira temporiariamente carcteres especiais e faz a contagem do 
-tamanho do cpf, se for igual a 11, o cpf é salvo na lista de válidos, se não é salvo na lista de inválidos, poderia
-nesse mesmo método filtrar todos caracteres especiais, mas para seguir o escopo do projeto é feita somente a contagem de carcteres
-IMPORTANTE=== Os CPFs salvos na lista de válidos podem conter '.' e '-' a retirada desses carcteres e feita somente para acontagem,
-portanto na lista de válidos são aceitos formatos semelhantes a esses: '123.456.789-00'  '12345678900' , qualquer outro formato e considerado inválido.
+## Task01: Estrutura Inicial do Projeto
 
-Commit feat: Adicionando o metodo imprimir
-Aqui simplemsmente adicionei na classse 'CPFValidador' um método que percore as duas listas de CPFs, válidos e inválidos, e as imprime no console.
+- **Criação das Branches:** Foram criadas as branches `main`, `dev`, e `task01`. A branch `task01` foi usada para o desenvolvimento das funcionalidades iniciais.
 
-Commit feat: Adicionando o metodo 'ler' na main
-Aqui adicionei na Classe 'main' um método que recebe o caminho de um arquivo .txt e uma lista de String 
-como parâmetro, faz a abertura do arquivo com base no caminho, faz a leitura de todas as linhas do arquivo e salva na lista de String.
+- **Commit `feat: Adicionando a estrutura das classes CPF e CPFValidador`:**  
+  Criação das classes `CPF` e `CPFValidador`. A classe `CPF` gerencia a lista original de CPFs, removendo duplicatas. A classe `CPFValidador` é responsável pelas operações de verificação e filtragem de CPFs.
 
-Commit feat: Adicionando entrada de dados e corrigindo o metodo imprimir
-Aqui basicamente foi criada a lista de String e a variavel que contem o caminho do arquivo, a chamada do metodo ler,
-a instancia de um objeto do tipo CPF, a chamada do metodo pra validar por tamanho, e a chamada do metodo imprimir, tudo isso na classe main.
-Foi feita uma pequena correção na regra de filtragem do metodo de filtar por tamanho na classe CPFValidador
-OBSS o nome do commit posssui um pequeno erro , deveria ser 'feat: Adicionando entrada de dados e corrigindo o metodo tamanhoCPF'.
+- **Commit `feat: Adicionando o método tamanhoCPF`:**  
+  Implementação do método `tamanhoCPF` na classe `CPFValidador`, que filtra os CPFs baseando-se em seu tamanho. CPFs válidos são salvos em uma lista, e inválidos em outra.
 
-Com isso é finalizada a task01 e realizado o merge com a branch dev!!                                   
-                                                                    
-partindo para a task02( branch 'taks02').  
+- **Commit `feat: Adicionando o método imprimir`:**  
+  Adição de um método que percorre e imprime as listas de CPFs válidos e inválidos.
 
+- **Commit `feat: Adicionando o método 'ler' na main`:**  
+  Implementação de um método na classe `main` para ler um arquivo `.txt` e salvar os CPFs em uma lista.
 
-Commit feat: adicionando metodo 'filtrarNumero' e atualizando listas
-Aqui foi criado um método que filtra a lista de válidos, ele retira possíveis letras e 
-caracteres indesejados, permanecem apenas números e os caracteres '.' e '-'.
-Os que não atendem a regra são removidos da lista de válidos e inseridos na lista de inválidos.
+- **Commit `feat: Adicionando entrada de dados e corrigindo o método imprimir`:**  
+  Criação da lógica principal para leitura de dados, validação por tamanho, e impressão dos resultados. Correção na lógica de filtragem de CPFs.
 
+Task01 foi concluída com sucesso e a branch `task01` foi mesclada na branch `dev`.
 
-Commit feat: adicionando metodo 'removerDuplicatas' na classe CPF
-Esse método utiliza a estrutura de dados 'set', mais precisamente o 'LinkedHashSet, para criar uma lista de dados 
-sem duplicatas e mantendo a ordem original dos elementos, então a lista original de CPFs 
-é atualizada e não contem numeros repetidos, as dublicatas são ignoradas.
+## Task02: Filtragem e Remoção de Duplicatas
 
+- **Commit `feat: adicionando método 'filtrarNumero' e atualizando listas`:**  
+  Implementação de um método para filtrar os CPFs válidos, removendo caracteres indesejados, deixando apenas números, pontos e hífens.
 
-Com isso é finalizada a task02 e realizado o merge com a branch dev!!                                   
-                                                                    
-partindo para a task03( branch 'taks03'). 
+- **Commit `feat: adicionando método 'removerDuplicatas' na classe CPF`:**  
+  Criação de um método para remover duplicatas da lista de CPFs utilizando a estrutura de dados `LinkedHashSet`, mantendo a ordem original.
 
-Commit feat: Removendo caracteres 
-Aqui adicionei um método que remove os caracteres da lista de validos, deixando somente os números.
-deixei pronto no metodo imprimir 2 linhas de codigo que imprimem o cpf formatado,
-exemplo ao envés de imprimir '12345678900' imprime 123.456.789-00
-porém não estou utilizando elas ainda, a fim de mostrar que meu programa está funcionando e removendo corretamente os caracteres.
+Task02 foi concluída com sucesso e a branch `task02` foi mesclada na branch `dev`.
 
-Commit fix: Corrigindo filtragem de caracteres
-Aqui fiz uma pequena alteração onde o metodo de filtragem de caracteres salava os cpfs sem os 
-caractares em uma lista chamada cpfNumerico, mantendo a integridade dos dados originais que não 
-são modificados, e posteriormente serão imprimidos no console.
-A lista cpfNumerico vai ser utiliuzada para realizar os calculos de validação, vale lembrar 
-que ela é um espelho da lista original, que contem os dados a serm impressos.
+## Task03: Refinamento da Filtragem e Validação
 
-Commit fix: Corrigindo remoção de duplicatas
-Percebi um problema na remoção de duplicatas da classe CPF então utilizei a estrutura de dados
-'map' ao envés de 'set' para sanar a o problema, criei uma lista de string para garantir a mesma ordem dos elemetos dentro da lista
+- **Commit `feat: Removendo caracteres`:**  
+  Implementação de um método que remove todos os caracteres, exceto números, dos CPFs válidos. Deixou-se preparado o código para formatação futura dos CPFs.
 
+- **Commit `fix: Corrigindo filtragem de caracteres`:**  
+  Ajuste na filtragem para salvar CPFs numéricos em uma lista separada, preservando os dados originais para futuras validações.
 
-Commit fix: Atualizando para remoção de duplicatas com ' HashSet'
-Após realizar uma análize percebi que o método de remoção de duplicatas funcionara melhor com a estrutura 'set' então fiz as devidas modificações 
+- **Commit `fix: Corrigindo remoção de duplicatas`:**  
+  Correção na lógica de remoção de duplicatas, trocando a estrutura de dados para `Map` para garantir a integridade dos dados e a ordem dos elementos.
 
+- **Commit `fix: Atualizando para remoção de duplicatas com 'HashSet'`:**  
+  Após análise, foi decidido retornar ao uso de `HashSet` para melhor eficiência na remoção de duplicatas.
 
- OBSS: Para a execução desse projeto foram de suma importancia as idéias, conselhos e ajuda em geral de todos os membros
- da equipe 07 (Guadiões do gitHub). Tambem houve cooperação mutua por parte do bolista Murilo Mazur, onde através de uma chamada, trocamos idéias para nossos projetos.  
+Task03 foi concluída com sucesso e as melhorias foram integradas na branch `dev`.
 
+## Agradecimentos
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Agradeço à equipe 07 (Guardiões do GitHub) pelo apoio e ideias durante o desenvolvimento deste projeto. Também houve uma cooperação significativa com o bolsista Murilo Mazur, com quem troquei ideias para a evolução de nossos projetos.
